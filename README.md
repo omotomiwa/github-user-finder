@@ -1,24 +1,2 @@
 # github_profile_finder
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a github user search engine that enables you to search for github users by inputing their usernames. It returns some information about the user that was searched for. This was achieved with the help of the github api.
