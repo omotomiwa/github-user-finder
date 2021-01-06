@@ -147,6 +147,7 @@ export default {
     },
     reset(){
        this.name="";
+       
 
     }
     
