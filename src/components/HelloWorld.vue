@@ -27,20 +27,28 @@
       <b-tabs content-class="mt-5"  align="center">
         <b><i class="fas fa-atlas mx-auto icon"></i></b>
         <b class="icon mx-auto">Respositories:</b>
-        <b-badge variant="secondary text-dark-50" class="repoNumber icon mx-auto" pill>0</b-badge>
+        <b-badge variant="secondary text-dark-50" class="repoNumber icon mx-auto" pill
+          v-for="(info, key) in infos" :key="key"
+        >{{info.public_repos}}</b-badge>
         <b-tabs title="hello"></b-tabs>
       </b-tabs>
     </div>
    
     
       <div class="imageContainer ">
-        <img
+      <p>  <img
           class="avatar"
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+           v-for="(info, key) in infos"  :key="key"
+          :src="info.avatar_url"
         />
+        </p>
          
       </div>
-      <b class="user">Username</b>
+      <b class="user"
+      v-for="(info, key) in infos" v-text="info.login" :key="key"
+      >Username</b>
+
+     
       <div class="repoContainer">
           <b-list-group class="repoList w-75 h-75">
         <b-list-group-item align="left" class="repoList w-75 h-75">
@@ -122,6 +130,8 @@ export default {
   data(){
     return{
        name: '',
+       infos: null,
+      
 
     }
     
@@ -129,22 +139,26 @@ export default {
   
     
   },
+    
  
   methods:{
+
     hello(){
        let user= document.querySelector(".search").value;
-       let fullname = user.split(" ").join("")
+       let fullname = user.split(" ").join("");
+       let msg = "No Username Found";
     
      const axios= require("axios");
   axios.get("https://api.github.com/users/"+fullname)
-       .then(response => console.log(response));
+            .then(response => (this.infos = response))
+            .catch(error => alert(error +" " +msg));
+            
+            
+
         
     
-     
-
-      
-      
-    },
+     },
+  
     reset(){
        this.name="";
        
@@ -176,13 +190,16 @@ h6 {
   left: 45%;
 }
 .avatar {
-  background-color: rgb(36, 32, 32);
   width: 270px;
   height: 270px;
   border-radius: 50%;
   position: relative;
   bottom : 40px;
   left: 10%;
+     display: block;
+      object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
   
 }
 
