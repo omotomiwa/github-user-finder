@@ -47,11 +47,12 @@
         :key="key2 + 11"
         :src="info.avatar_url"
       />
-    </div>
-
-    <h2 class="user" v-for="(info, keyz) in infos" :key="keyz + 17">
+       <h2 class="user" v-for="(info, keyz) in infos" :key="keyz + 17">
       <a :href="info.html_url" target="_blank"> {{ info.login }} </a>
     </h2>
+    </div>
+
+   
     <div class="container">
       <div class="card">
         <div class="blender"></div>
@@ -385,13 +386,21 @@ p,
 
 /* mobile */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 70px;
+ .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 35%;
   }
   .user {
     position: relative;
+    left: 1px;
+    bottom: 50px;
+    font-size: 1em;
   }
   .footer {
     width: 100%;
@@ -408,18 +417,20 @@ p,
     position: relative;
     left: 30%;
   }
-  .avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 70px;
-    position: relative;
-    left: 10px;
-    bottom: 60px;
+  .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 35%;
   }
   .user {
     position: relative;
     left: 1px;
-    bottom: 10px;
+    bottom: 50px;
     font-size: 1em;
   }
   .card {
@@ -447,6 +458,23 @@ p,
 
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 35%;
+  }
+  .user {
+    position: relative;
+    left: 1px;
+    bottom: 50px;
+    font-size: 1em;
+  }
+  
   .footer {
     width: 100%;
     position: relative;
@@ -457,6 +485,22 @@ p,
 
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 35%;
+  }
+  .user {
+    position: relative;
+    left: 1px;
+    bottom: 50px;
+    font-size: 1em;
+  }
   .footer {
     width: 100%;
     height: 40px;
@@ -467,14 +511,32 @@ p,
 
 /* Tablets */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 70px;
-    position: relative;
-    left: -250px;
-    bottom: 50px;
+ .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 30%;
   }
+  .user {
+    position: relative;
+    left: 1px;
+    bottom: 50px;
+    font-size: medium;
+  }
+  .align {
+  margin-left: 10px;
+   font-size: large;
+}
+p,
+.fa-circle {
+  margin-left: 10px;
+  color: grey;
+}
+
   .footer {
     width: 100%;
     position: relative;
@@ -489,17 +551,31 @@ p,
     position: relative;
     left: 40%;
   }
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 80px;
-    position: relative;
-    left: 5%;
+.avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 30%;
   }
   .user {
     position: relative;
-    right: 30px;
+    left: 1px;
+    bottom: 50px;
+    font-size: medium;
   }
+  .align {
+  margin-left: 10px;
+   font-size: large;
+}
+p,
+.fa-circle {
+  margin-left: 10px;
+  color: grey;
+}
   .footer {
     width: 100%;
     position: relative;
@@ -513,17 +589,31 @@ p,
     position: relative;
     left: 40%;
   }
-  .avatar {
-    width: 170px;
-    height: 170px;
-    border-radius: 90px;
-    position: relative;
-    left: 6%;
+ .avata {
+    border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  left: 30%;
   }
-  .user {
+ .user {
     position: relative;
-    margin-right: 3px;
+    left: 1px;
+    bottom: 50px;
+    font-size: x-large;
   }
+  .align {
+  margin-left: 10px;
+   font-size: x-large;
+}
+p,
+.fa-circle {
+  margin-left: 10px;
+  color: grey;
+}
   .footer {
     width: 100%;
     position: relative;
